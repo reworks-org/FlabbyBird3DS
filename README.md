@@ -15,7 +15,7 @@ To build, you require the following libraries:
 - [SFTD](https://github.com/xerpi/sftdlib)
 
 Then run 'make' to build the .3dsx.
-If you don't want to build yourself, feel free to download the binaries on the [releases](https://github.com/reworks/FlabbyBird3DS/releases) page.
+If you don't want to build yourself, feel free to download the binaries on the [releases](https://github.com/reworks/FlabbyBird3DS/releases/latest) page.
 
 # Install:
 Drag FlabbyBird3DS.3dsx & FlabbyBird.smdh to 3ds/ or put it in a 'FlabbyBird3DS' folder, then drag it to 3ds/

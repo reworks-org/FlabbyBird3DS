@@ -3,9 +3,9 @@
 A Flappy Bird clone for the Nintendo 3DS. This file is for the Homebrew Launcher, not for CFW!
 
 # Screenshots:
-[Menu](../master/screenshots/menu.png)
-[Instructions](../master/screenshots/instr.png)
-[Gameplay](../master/screenshots/game.png)
+- [Menu](../master/screenshots/menu.png)
+- [Instructions](../master/screenshots/instr.png)
+- [Gameplay](../master/screenshots/game.png)
 
 # Build:
 To build, you require the following libraries:

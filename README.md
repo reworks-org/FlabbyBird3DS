@@ -26,7 +26,7 @@ Drag FlabbyBird3DS.3dsx & FlabbyBird.smdh to 3ds/ or put it in a 'FlabbyBird3DS'
 - [game_over.ttf](http://www.dafont.com/game-over.font)
 - [f25.ttf](http://www.dafont.com/f25-bank-printer.font)
 
-I claim no credit for the included artwork (specifically, anything found in [res/](../master/res/), I found it on google images. All credits to the original creator(s).
+I claim no credit for the included artwork (specifically, anything found in [res/](../master/res/)), I found it on google images. All credits to the original creator(s).
 
 # Disclaimer:
 [Disclaimer](../master/LICENSE.txt)

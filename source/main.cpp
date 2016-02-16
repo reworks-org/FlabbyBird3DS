@@ -228,6 +228,30 @@ void draw_top()
 	}
 
 	sf2d_end_frame();
+
+	sf2d_start_frame(GFX_TOP, GFX_RIGHT);
+
+	if (game_state == 0) {
+
+		sf2d_draw_texture(background, scroll, 0);
+		sf2d_draw_texture(background, scroll + SCREEN_WIDTH_TOP, 0);
+
+		sftd_draw_text(font, 70, 3, RGBA8(255, 255, 0, 255), 128, "Flabby Bird");
+
+	} else {
+		//if (scroll > -1800) scroll = 0;
+		sf2d_draw_texture(background, scroll, 0);
+		sf2d_draw_texture(background, scroll + SCREEN_WIDTH_TOP, 0);
+
+		for (int i = 0; i < 2; i++) {
+			sf2d_draw_texture(pipe, wx[i], wy[i] - (240 / 2 + 32) - 120); // top
+			sf2d_draw_texture(pipe, wx[i], wy[i] + (240 / 2 + 32) - 120); // bottom
+		}
+
+		sf2d_draw_texture(bird, 120, y);
+	}
+
+	sf2d_end_frame();
 }
 
 void draw_bottom()
@@ -246,6 +270,7 @@ void draw_bottom()
 			sftd_draw_text(console_font, 0, 20, RGBA8(255, 255, 255, 255), 12, "B = Jump.");
 			sftd_draw_text(console_font, 0, 30, RGBA8(255, 255, 255, 255), 12, "START = Quit game / back to menu.");
 			sftd_draw_text(console_font, 0, 40, RGBA8(255, 255, 255, 255), 12, "SELECT = Reset high score.");
+			sftd_draw_text(console_font, 0, 50, RGBA8(255, 255, 255, 255), 12, "TOUCH = Jump.");
 		}
 
 	} else {
@@ -281,6 +306,7 @@ int main()
 		hidScanInput();
 
 		u32 kDown = hidKeysDown();
+		touchPosition touch;
 
 		if (game_state == 0) {
 
@@ -294,6 +320,11 @@ int main()
 			if (kDown & KEY_START) reset();
 			if (kDown & KEY_X) { if (!draw_controls) { draw_controls = true; } else { draw_controls = false; } }
 			if (kDown & KEY_B) { vy = -8; }
+
+			hidTouchRead(&touch);
+			if ((touch.px > 0 && touch.px < 240) && (touch.py > 0 && touch.py < 320)) {
+				vy = -8;
+			}
 
 		}
 
